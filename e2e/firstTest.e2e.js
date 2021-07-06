@@ -1,9 +1,11 @@
 describe('App', () => {
   
   beforeAll(async () => {
-    await device.launchApp({
-      newInstance: true,
-    });
+    await device.launchApp();
+  });
+
+  afterAll(async () => {
+    await device.reloadReactNative()
   });
 
   beforeEach(async () => {
@@ -26,12 +28,8 @@ describe('App', () => {
   });
 
   it('can select a pizza from the menu, pick a size, and submit an order', async () => {
-    // Note: I expected this to work but the tap action happened in the middle of the menu item
-    // reversed to match buttons with an ancestor of the item we're looking for
-    // await element(by.id('supreme').withDescendant(by.text('Order'))).tap();
     await element(by.text('Order').withAncestor(by.id('supreme'))).tap();
     await element(by.text('large')).tap();
-    // wouldnt really do this because the price of pizza can change
     await expect(element(by.id('total'))).toHaveText('$28');
     await element(by.id('order-button')).tap();
     await expect(
