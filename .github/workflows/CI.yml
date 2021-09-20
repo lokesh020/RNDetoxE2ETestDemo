@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+            node-version: '14'
+
+      - name: Install NPM Dependencies
+        run: npm install
+
+      - name: Run Jetify
+        run: npm run jetify
+
+      - name: Cache Gradle Wrapper
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
+
+      - name: Cache Gradle Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
+
+      - name: Make Gradlew Executable
+        run: chmod +x ./gradlew
+        working-directory: android
+
+      - name: Build Android Bundles (APK & AAB)
+        run: ./gradlew assembleRelease bundleRelease --no-daemon
+        working-directory: android
+
+      - name: Upload AAB Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Android_AAB_Bundle
+          path: android/app/build/outputs/bundle/release/app-release.aab
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Android_APK
+          path: android/app/build/outputs/apk/release/app-release.apk
+  build-ios:
+    runs-on: macos-latest
+    if: ${{ false }} # Disable iOS builds for now; they are taking far too long
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@master
+      - uses: c-hive/gha-yarn-cache@v2
+
+      - name: Install Yarn Dependencies
+        run: yarn install
+
+      - name: Cache Cocoapods Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+
+      - name: Install Pod dependencies
+        working-directory: ios
+        run: pod install
+
+      - name: Build iOS app
+        run: |
+          xcodebuild -workspace ios/SennenPropertyManagement.xcworkspace -scheme SennenPropertyManagement archive -archivePath ios/SennenPropertyManagement.xcarchive -allowProvisioningUpdates -quiet
+          xcodebuild -exportArchive -archivePath ios/SennenPropertyManagement.xcarchive -exportPath ios/build -exportOptionsPlist ios/SennenPropertyManagement/Info.plist
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: iOS APP build
+          path: ios/build/
