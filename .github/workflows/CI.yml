@@ -18,7 +18,7 @@ jobs:
         run: npm install
 
       - name: Run Jetify
-        run: npm run jetify
+        run: npx jetify
 
       - name: Cache Gradle Wrapper
         uses: actions/cache@v2
