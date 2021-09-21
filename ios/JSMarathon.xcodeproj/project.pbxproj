@@ -13,6 +13,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		841566CC26F9F8BA0069694A /* exportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 841566CB26F9F8BA0069694A /* exportOptions.plist */; };
 		CF16266EB37529F27141DE61 /* libPods-JSMarathon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 284FEE5750530BFFF4EBB8E2 /* libPods-JSMarathon.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		48097650A9CB3EF8E1319C62 /* libPods-JSMarathon-JSMarathonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSMarathon-JSMarathonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7601EEC4F02962AAB3116F71 /* Pods-JSMarathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSMarathon.release.xcconfig"; path = "Target Support Files/Pods-JSMarathon/Pods-JSMarathon.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = JSMarathon/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		841566CB26F9F8BA0069694A /* exportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exportOptions.plist; sourceTree = "<group>"; };
 		B8D0C2F18E8CA41F43791570 /* Pods-JSMarathon-JSMarathonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSMarathon-JSMarathonTests.debug.xcconfig"; path = "Target Support Files/Pods-JSMarathon-JSMarathonTests/Pods-JSMarathon-JSMarathonTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D102140EBAF0328A57B02625 /* Pods-JSMarathon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSMarathon.debug.xcconfig"; path = "Target Support Files/Pods-JSMarathon/Pods-JSMarathon.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -86,6 +88,7 @@
 		13B07FAE1A68108700A75B9A /* JSMarathon */ = {
 			isa = PBXGroup;
 			children = (
+				841566CA26F9F85C0069694A /* provisioning */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -135,6 +138,14 @@
 				00E356EE1AD99517003FC87E /* JSMarathonTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		841566CA26F9F85C0069694A /* provisioning */ = {
+			isa = PBXGroup;
+			children = (
+				841566CB26F9F8BA0069694A /* exportOptions.plist */,
+			);
+			path = provisioning;
 			sourceTree = "<group>";
 		};
 		D41181E2A715C298C46C2890 /* Pods */ = {
@@ -241,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				841566CC26F9F8BA0069694A /* exportOptions.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +481,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = Enterprise_Arvind;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -499,6 +512,7 @@
 				PRODUCT_NAME = JSMarathon;
 				PROVISIONING_PROFILE_SPECIFIER = Enterprise_Arvind;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

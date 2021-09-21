@@ -5,6 +5,7 @@ on:
 
 jobs:
   build-android:
+    if: ${{ false }} 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -53,7 +54,6 @@ jobs:
           path: android/app/build/outputs/apk/release/app-release.apk
   build-ios:
     runs-on: macos-latest
-    if: ${{ false }} # Disable iOS builds for now; they are taking far too long
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -74,10 +74,26 @@ jobs:
         working-directory: ios
         run: pod install
 
-      - name: Build iOS app
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_12.2
+        
+      - name: Xcode verison 
+        run: /usr/bin/xcodebuild -version
+      
+      - name: Build iOS archive
         run: |
-          xcodebuild -workspace ios/SennenPropertyManagement.xcworkspace -scheme SennenPropertyManagement archive -archivePath ios/SennenPropertyManagement.xcarchive -allowProvisioningUpdates -quiet
-          xcodebuild -exportArchive -archivePath ios/SennenPropertyManagement.xcarchive -exportPath ios/build -exportOptionsPlist ios/SennenPropertyManagement/Info.plist
+          xcodebuild -project ios/JSMarathon.xcworkspace \ 
+            -configuration Release -allowProvisioningUpdates -scheme JSMarathon \
+            -derivedDataPath DerivedData \
+            -archivePath DerivedData/Archive/JSMarathon archive
+      
+      - name: Export archive
+        run: |
+          xcodebuild -exportArchive \
+            -archivePath DerivedData/Archive/SennenPropertyManagement.xcarchive \
+            -exportOptionsPlist provisioning/exportOptions.plist \
+            -exportPath ios/build
+      
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
