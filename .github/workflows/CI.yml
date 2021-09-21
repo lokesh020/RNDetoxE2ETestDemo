@@ -80,17 +80,11 @@ jobs:
       
       - name: Build iOS archive
         run: |
-          xcodebuild -project ios/JSMarathon.xcworkspace \ 
-            -configuration Release -allowProvisioningUpdates -scheme JSMarathon \
-            -derivedDataPath DerivedData \
-            -archivePath DerivedData/Archive/JSMarathon archive
+          xcodebuild -project ios/JSMarathon.xcworkspace -configuration Release -allowProvisioningUpdates -scheme JSMarathon -derivedDataPath DerivedData -archivePath DerivedData/Archive/JSMarathon archive
       
       - name: Export archive
         run: |
-          xcodebuild -exportArchive \
-            -archivePath DerivedData/Archive/JSMarathon.xcarchive \
-            -exportOptionsPlist provisioning/exportOptions.plist \
-            -exportPath ios/build
+          xcodebuild -exportArchive -archivePath DerivedData/Archive/JSMarathon.xcarchive -exportOptionsPlist provisioning/exportOptions.plist -exportPath ios/build
       
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
