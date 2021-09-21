@@ -80,7 +80,7 @@ jobs:
       
       - name: Build iOS archive
         run: |
-          xcodebuild -workspace ios/JSMarathon.xcworkspace -configuration Release -allowProvisioningUpdates -scheme JSMarathon -archivePath DerivedData/Archive/JSMarathon archive
+          xcodebuild -workspace ios/JSMarathon.xcworkspace -configuration Release -scheme JSMarathon -archivePath DerivedData/Archive/JSMarathon archive
       
       - name: Export archive
         run: |
