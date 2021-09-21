@@ -13,8 +13,8 @@ const TestImagePicker = (params) =>  {
     const openGallery = () => {
         let  customOptions = {
             mediaType: "photo",
-            maxWidth: 300,
-            maxHeight: 300
+            maxWidth: 400,
+            maxHeight: 400
         };
         launchImageLibrary(customOptions, (response) => {
             if (response.didCancel) {
