@@ -459,11 +459,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development: Deon De Villiers (UV65SQ2UDM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Deon De Villiers (UV65SQ2UDM)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBQBPDWA3X;
+				DEVELOPMENT_TEAM = 99J6843H9U;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JSMarathon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -476,9 +476,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dotsquare.enter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.technician.app;
 				PRODUCT_NAME = JSMarathon;
-				PROVISIONING_PROFILE_SPECIFIER = Enterprise_Arvind;
+				PROVISIONING_PROFILE_SPECIFIER = technicianDevProvProfile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -492,11 +492,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development: Deon De Villiers (UV65SQ2UDM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Deon De Villiers (UV65SQ2UDM)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBQBPDWA3X;
+				DEVELOPMENT_TEAM = 99J6843H9U;
 				INFOPLIST_FILE = JSMarathon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -508,9 +508,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dotsquare.enter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.technician.app;
 				PRODUCT_NAME = JSMarathon;
-				PROVISIONING_PROFILE_SPECIFIER = Enterprise_Arvind;
+				PROVISIONING_PROFILE_SPECIFIER = technicianDevProvProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";

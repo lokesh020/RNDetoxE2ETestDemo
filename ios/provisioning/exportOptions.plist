@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>method</key>
-	<string>enterprise</string>
+	<string>development</string>
 	<key>uploadBitcode</key>
 	<true/>
 	<key>compileBitcode</key>
 	<true/>
-  <key>stripSwiftSymbols</key>
-  <false/>
+	<key>teamID</key>
+	<string>UV65SQ2UDM</string>
+	<key>stripSwiftSymbols</key>
+	<false/>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>signingCertificate</key>
-	<string>iPhone Distribution: Dotsquares Ltd.</string>
+	<string>Apple Development: Deon De Villiers</string>
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.dotsquare.enter</key>
-		<string>Enterprise_Arvind</string>
+		<string>technicianDevProvProfile</string>
 	</dict>
 </dict>
 </plist>
