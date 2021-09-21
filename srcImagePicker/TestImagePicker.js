@@ -20,7 +20,7 @@ const TestImagePicker = (params) =>  {
             if (response.didCancel) {
                 
             } else if (response.errorCode) {
-                console.log('ImagePicker Error Happened: >>>', response.errorMessage);
+                console.log('ImagePicker Error occured: >>>', response.errorMessage);
                 this.handleError(response.errorCode)
                 reject(response.errorCode)
             } else {
