@@ -13,6 +13,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		84B61A582705899F009325B2 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B61A572705899F009325B2 /* UIView+Toast.m */; };
+		84B61A6027058A76009325B2 /* ToastModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B61A5F27058A76009325B2 /* ToastModule.m */; };
 		CF16266EB37529F27141DE61 /* libPods-JSMarathon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 284FEE5750530BFFF4EBB8E2 /* libPods-JSMarathon.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,10 @@
 		48097650A9CB3EF8E1319C62 /* libPods-JSMarathon-JSMarathonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSMarathon-JSMarathonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7601EEC4F02962AAB3116F71 /* Pods-JSMarathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSMarathon.release.xcconfig"; path = "Target Support Files/Pods-JSMarathon/Pods-JSMarathon.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = JSMarathon/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84B61A562705899F009325B2 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		84B61A572705899F009325B2 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		84B61A5E27058A60009325B2 /* ToastModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToastModule.h; sourceTree = "<group>"; };
+		84B61A5F27058A76009325B2 /* ToastModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToastModule.m; sourceTree = "<group>"; };
 		B8D0C2F18E8CA41F43791570 /* Pods-JSMarathon-JSMarathonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSMarathon-JSMarathonTests.debug.xcconfig"; path = "Target Support Files/Pods-JSMarathon-JSMarathonTests/Pods-JSMarathon-JSMarathonTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D102140EBAF0328A57B02625 /* Pods-JSMarathon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSMarathon.debug.xcconfig"; path = "Target Support Files/Pods-JSMarathon/Pods-JSMarathon.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -86,6 +92,7 @@
 		13B07FAE1A68108700A75B9A /* JSMarathon */ = {
 			isa = PBXGroup;
 			children = (
+				84B61A5D27058A3A009325B2 /* ToastModule */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -109,6 +116,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				84B61A5C270589FC009325B2 /* ToastView */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -135,6 +143,24 @@
 				00E356EE1AD99517003FC87E /* JSMarathonTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		84B61A5C270589FC009325B2 /* ToastView */ = {
+			isa = PBXGroup;
+			children = (
+				84B61A562705899F009325B2 /* UIView+Toast.h */,
+				84B61A572705899F009325B2 /* UIView+Toast.m */,
+			);
+			path = ToastView;
+			sourceTree = "<group>";
+		};
+		84B61A5D27058A3A009325B2 /* ToastModule */ = {
+			isa = PBXGroup;
+			children = (
+				84B61A5E27058A60009325B2 /* ToastModule.h */,
+				84B61A5F27058A76009325B2 /* ToastModule.m */,
+			);
+			path = ToastModule;
 			sourceTree = "<group>";
 		};
 		D41181E2A715C298C46C2890 /* Pods */ = {
@@ -374,6 +400,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B61A582705899F009325B2 /* UIView+Toast.m in Sources */,
+				84B61A6027058A76009325B2 /* ToastModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
