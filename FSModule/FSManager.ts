@@ -5,8 +5,8 @@
 import { NativeModules, NativeEventEmitter, Platform } from 'react-native'
 
 
-const base64 = require('base-64');
-const utf8 = require('utf8');
+const base64 = require('./base64');
+const utf8 = require('./utf8');
 
 import {
   MkdirOptions,
