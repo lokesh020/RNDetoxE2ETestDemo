@@ -13,6 +13,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		843CDF772705DE0100BDAB87 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDF762705DE0100BDAB87 /* FileDownloader.m */; };
+		843CDF7E2705DEE600BDAB87 /* NSArray+Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CDF7D2705DEE600BDAB87 /* NSArray+Map.m */; };
+		848F8AF12705E50900D3F7A8 /* FSModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F8AF02705E50900D3F7A8 /* FSModule.m */; };
 		84B61A582705899F009325B2 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B61A572705899F009325B2 /* UIView+Toast.m */; };
 		84B61A6027058A76009325B2 /* ToastModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B61A5F27058A76009325B2 /* ToastModule.m */; };
 		CF16266EB37529F27141DE61 /* libPods-JSMarathon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 284FEE5750530BFFF4EBB8E2 /* libPods-JSMarathon.a */; };
@@ -43,6 +46,12 @@
 		48097650A9CB3EF8E1319C62 /* libPods-JSMarathon-JSMarathonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSMarathon-JSMarathonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7601EEC4F02962AAB3116F71 /* Pods-JSMarathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSMarathon.release.xcconfig"; path = "Target Support Files/Pods-JSMarathon/Pods-JSMarathon.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = JSMarathon/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		843CDF752705DDE500BDAB87 /* FileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloader.h; sourceTree = "<group>"; };
+		843CDF762705DE0100BDAB87 /* FileDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileDownloader.m; sourceTree = "<group>"; };
+		843CDF7C2705DEB400BDAB87 /* NSArray+Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Map.h"; sourceTree = "<group>"; };
+		843CDF7D2705DEE600BDAB87 /* NSArray+Map.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Map.m"; sourceTree = "<group>"; };
+		843CDF832705E04300BDAB87 /* FSModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSModule.h; sourceTree = "<group>"; };
+		848F8AF02705E50900D3F7A8 /* FSModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSModule.m; sourceTree = "<group>"; };
 		84B61A562705899F009325B2 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		84B61A572705899F009325B2 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		84B61A5E27058A60009325B2 /* ToastModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToastModule.h; sourceTree = "<group>"; };
@@ -92,6 +101,7 @@
 		13B07FAE1A68108700A75B9A /* JSMarathon */ = {
 			isa = PBXGroup;
 			children = (
+				843CDF742705DDE500BDAB87 /* FSModule */,
 				84B61A5D27058A3A009325B2 /* ToastModule */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -143,6 +153,19 @@
 				00E356EE1AD99517003FC87E /* JSMarathonTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		843CDF742705DDE500BDAB87 /* FSModule */ = {
+			isa = PBXGroup;
+			children = (
+				843CDF752705DDE500BDAB87 /* FileDownloader.h */,
+				843CDF762705DE0100BDAB87 /* FileDownloader.m */,
+				843CDF7C2705DEB400BDAB87 /* NSArray+Map.h */,
+				843CDF7D2705DEE600BDAB87 /* NSArray+Map.m */,
+				843CDF832705E04300BDAB87 /* FSModule.h */,
+				848F8AF02705E50900D3F7A8 /* FSModule.m */,
+			);
+			path = FSModule;
 			sourceTree = "<group>";
 		};
 		84B61A5C270589FC009325B2 /* ToastView */ = {
@@ -403,6 +426,9 @@
 				84B61A582705899F009325B2 /* UIView+Toast.m in Sources */,
 				84B61A6027058A76009325B2 /* ToastModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				843CDF7E2705DEE600BDAB87 /* NSArray+Map.m in Sources */,
+				848F8AF12705E50900D3F7A8 /* FSModule.m in Sources */,
+				843CDF772705DE0100BDAB87 /* FileDownloader.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,7 +446,6 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8D0C2F18E8CA41F43791570 /* Pods-JSMarathon-JSMarathonTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -447,7 +472,6 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A4FC8C433CBF127C6A19ABD /* Pods-JSMarathon-JSMarathonTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -471,7 +495,6 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D102140EBAF0328A57B02625 /* Pods-JSMarathon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -503,7 +526,6 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7601EEC4F02962AAB3116F71 /* Pods-JSMarathon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
