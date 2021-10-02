@@ -585,3 +585,6 @@ RCT_EXPORT_METHOD(getFSInfo:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromise
     if (!completionHandlers) completionHandlers = [[NSMutableDictionary alloc] init];
     [completionHandlers setValue:completionHandler forKey:identifier];
 }
+
+@end
+

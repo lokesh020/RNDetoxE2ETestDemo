@@ -7,7 +7,7 @@ const ToastDemoScreen = () => {
   useEffect(() => {}, []);
 
   const onShowToastPress = () => {
-    const path = FSManager.DocumentDirectoryPath;
+    const path = FSManager.MainBundlePath;
     Toast.show('path is :- ' + path, Toast.POSITION_BOTTOM, 2.0);
   };
 
